@@ -4,35 +4,88 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/dist/output.css" />
+    <!-- tailwind.css -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+    theme: {
+    extend: {
+      fontFamily: {
+        "popins-bold"       : "popins-bold",
+        "popins-thin"       : "popins-thin",
+        "plus-jakarta-sans" : "plus-jakarta",
+      },
+      colors: {
+        "ungu"        : "#5D50C6",
+        "putih"       : "#FFFFFF",
+        "putih-filter": "#EEEEEE",
+        "putih-abu"   : "#F4F4F4",
+        "orange"      : "#FF5722",
+        "pink"        : "#F85E9F",
+        "hitam"       : "#191825",
+        "hitam-ungu"  : "#150050",
+        "background"  : "linear-gradient(145deg, #cacaca, #f0f0f0)",
+      },
+      boxShadow: {
+        "custom"      : "0 2px 4px rgba(0, 0, 0, 0.1)",
+        "card"        : "0 4px 8px rgba(0, 0, 0, 0.1)",
+        "custom-two"  : "5px 5px 10px #d5d5d5,-5px -5px 10px #ebebeb",
+                },
+            },
+       },
+    plugins: [],
+    };
+    </script>
+
     <style type="text/tailwindcss">
-      @layer base {
-  @font-face {
-    font-family: "popins";
-    src: url("/public/font/Poppins/Poppins-Medium.ttf");
-  }
-  @font-face {
-    font-family: "popins-bold";
-    src: url("/public/font/Poppins/Poppins-Black.ttf");
-  }
-  @font-face {
-    font-family: "popins-thin";
-    src: url("/public/font/Poppins/Poppins-Light.ttf");
-  }
-  @font-face {
-    font-family: "plus-jakarta";
-    src: url("/public/font/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf");
-  }
-  html {
-    font-family: "popins";
-    color: #191825;
-  }
-  body {
-    overflow-x: hidden;
-  }
-      }
-    </style>
+    @layer utilities {
+    @font-face {
+        font-family: "popins";
+        src: url("../public/font/Poppins/Poppins-Medium.ttf");
+    }
+    @font-face {
+        font-family: "popins-bold";
+        src: url("../public/font/Poppins/Poppins-Black.ttf");
+    }
+    @font-face {
+        font-family: "popins-thin";
+        src: url("../public/font/Poppins/Poppins-Light.ttf");
+    }
+    @font-face {
+        font-family: "plus-jakarta";
+        src: url("../public/font/Plus_Jakarta_Sans/PlusJakartaSans-Italic-VariableFont_wght.ttf");
+    }
+    html {
+        font-family: "popins";
+        color: #191825;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
+    @keyframes goyang {
+        0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    75% {
+      transform: translateX(-10px);
+    }
+    100% {
+      transform: translateX(0);
+            }
+        }
+    }
+      </style>
   </head>
   <style>
     .custom-div {
@@ -174,7 +227,7 @@
   <body class="second-options-centered">
     <!-- quest 1 -->
     <div class="custom-div first-options w-[80%] sm:w-[80%] md:w-[30%]">
-      <img src="/public/image/3210116.jpg" alt="" />
+      <img src="../public/image/3210116.jpg" alt="" />
       <h2 class="text-2xl font-bold mb-3 mt-3 text-center text-hitam-ungu">
         Selamat Akun Anda telah Terdaftar
       </h2>
@@ -236,7 +289,7 @@
         <div class="flex flex-col lg:flex-row sm:flex-row card-card">
           <div class="card flex flex-col items-center text-center">
             <div>
-              <img src="/public/image/image-wanita2.svg" alt="" />
+              <img src="../public/image/image-wanita2.svg" alt="" />
             </div>
             <h1 class="mt-2 text-2xl">Freya</h1>
             <p class="mt-1 sub-judul">Member of JKT48</p>
@@ -266,7 +319,7 @@
           </div>
           <div class="card flex flex-col items-center text-center">
             <div>
-              <img src="/public/image/image-wanita1.svg" alt="" />
+              <img src="../public/image/image-wanita1.svg" alt="" />
             </div>
             <h1 class="mt-2 text-2xl">Mei Cristina</h1>
             <p class="mt-1 sub-judul">Intact but Fragile</p>
@@ -296,7 +349,7 @@
           </div>
           <div class="card flex flex-col items-center text-center">
             <div>
-              <img src="/public/image/image-wanita3.svg" alt="" />
+              <img src="../public/image/image-wanita3.svg" alt="" />
             </div>
             <h1 class="mt-2 text-2xl">Kayes</h1>
             <p class="mt-1 sub-judul">Member of ONIC</p>
@@ -326,7 +379,7 @@
           </div>
           <div class="card flex flex-col items-center text-center">
             <div>
-              <img src="/public/image/image-wanita4.svg" alt="" />
+              <img src="../public/image/image-wanita4.svg" alt="" />
             </div>
             <h1 class="mt-2 text-2xl">Raquel</h1>
             <p class="mt-1 sub-judul">Actor of Money Heist</p>
@@ -376,7 +429,7 @@
               ></ion-icon>
             </button>
             <img
-              src="/public/image/image-wanita1.svg"
+              src="../public/image/image-wanita1.svg"
               alt=""
               width="50px"
               style="border-radius: 50px"
@@ -434,7 +487,7 @@
               ></ion-icon>
             </button>
             <img
-              src="/public/image/image-wanita2.svg"
+              src="../public/image/image-wanita2.svg"
               alt=""
               width="50px"
               style="border-radius: 50px"
@@ -491,7 +544,7 @@
               ></ion-icon>
             </button>
             <img
-              src="/public/image/image-wanita3.svg"
+              src="../public/image/image-wanita3.svg"
               alt=""
               width="50px"
               style="border-radius: 50px"
@@ -548,7 +601,7 @@
               ></ion-icon>
             </button>
             <img
-              src="/public/image/image-wanita4.svg"
+              src="../public/image/image-wanita4.svg"
               alt=""
               width="50px"
               style="border-radius: 50px"
@@ -619,7 +672,7 @@
         <div class="flex flex-col sm:flex-row lg:flex-row card-card">
           <div class="card flex flex-col items-center text-center">
             <div>
-              <img src="/public/image/image-cowo1.svg" alt="" />
+              <img src="../public/image/image-cowo1.svg" alt="" />
             </div>
             <h1 class="mt-2 text-2xl">Coki Pardede</h1>
             <p class="mt-1 sub-judul">Leader of WHY</p>
@@ -649,7 +702,7 @@
           </div>
           <div class="card flex flex-col items-center text-center">
             <div>
-              <img src="/public/image/image-cowo2.svg" alt="" />
+              <img src="../public/image/image-cowo2.svg" alt="" />
             </div>
             <h1 class="mt-2 text-2xl">Dustin</h1>
             <p class="mt-1 sub-judul">Member of WHY</p>
@@ -679,7 +732,7 @@
           </div>
           <div class="card flex flex-col items-center text-center">
             <div>
-              <img src="/public/image/image-cowo3.svg" alt="" />
+              <img src="../public/image/image-cowo3.svg" alt="" />
             </div>
             <h1 class="mt-2 text-2xl">Deddy</h1>
             <p class="mt-1 sub-judul">Youtuber</p>
@@ -709,7 +762,7 @@
           </div>
           <div class="card flex flex-col items-center text-center">
             <div>
-              <img src="/public/image/image-cowo4.svg" alt="" />
+              <img src="../public/image/image-cowo4.svg" alt="" />
             </div>
             <h1 class="mt-2 text-2xl">Windah</h1>
             <p class="mt-1 sub-judul">Streamer</p>
@@ -759,7 +812,7 @@
               ></ion-icon>
             </button>
             <img
-              src="/public/image/image-cowo1.svg"
+              src="../public/image/image-cowo1.svg"
               alt=""
               width="50px"
               style="border-radius: 50px"
@@ -817,7 +870,7 @@
               ></ion-icon>
             </button>
             <img
-              src="/public/image/image-cowo2.svg"
+              src="../public/image/image-cowo2.svg"
               alt=""
               width="50px"
               style="border-radius: 50px"
@@ -874,7 +927,7 @@
               ></ion-icon>
             </button>
             <img
-              src="/public/image/image-cowo3.svg"
+              src="../public/image/image-cowo3.svg"
               alt=""
               width="50px"
               style="border-radius: 50px"
@@ -931,7 +984,7 @@
               ></ion-icon>
             </button>
             <img
-              src="/public/image/image-cowo4.svg"
+              src="../public/image/image-cowo4.svg"
               alt=""
               width="50px"
               style="border-radius: 50px"

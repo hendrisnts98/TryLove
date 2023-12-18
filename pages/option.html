@@ -4,7 +4,88 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/dist/output.css" />
+    <!-- tailwind.css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+    theme: {
+    extend: {
+      fontFamily: {
+        "popins-bold"       : "popins-bold",
+        "popins-thin"       : "popins-thin",
+        "plus-jakarta-sans" : "plus-jakarta",
+      },
+      colors: {
+        "ungu"        : "#5D50C6",
+        "putih"       : "#FFFFFF",
+        "putih-filter": "#EEEEEE",
+        "putih-abu"   : "#F4F4F4",
+        "orange"      : "#FF5722",
+        "pink"        : "#F85E9F",
+        "hitam"       : "#191825",
+        "hitam-ungu"  : "#150050",
+        "background"  : "linear-gradient(145deg, #cacaca, #f0f0f0)",
+      },
+      boxShadow: {
+        "custom"      : "0 2px 4px rgba(0, 0, 0, 0.1)",
+        "card"        : "0 4px 8px rgba(0, 0, 0, 0.1)",
+        "custom-two"  : "5px 5px 10px #d5d5d5,-5px -5px 10px #ebebeb",
+                },
+            },
+       },
+    plugins: [],
+    };
+    </script>
+
+    <style type="text/tailwindcss">
+    @layer utilities {
+    @font-face {
+        font-family: "popins";
+        src: url("../public/font/Poppins/Poppins-Medium.ttf");
+    }
+    @font-face {
+        font-family: "popins-bold";
+        src: url("../public/font/Poppins/Poppins-Black.ttf");
+    }
+    @font-face {
+        font-family: "popins-thin";
+        src: url("../public/font/Poppins/Poppins-Light.ttf");
+    }
+    @font-face {
+        font-family: "plus-jakarta";
+        src: url("../public/font/Plus_Jakarta_Sans/PlusJakartaSans-Italic-VariableFont_wght.ttf");
+    }
+    html {
+        font-family: "popins";
+        color: #191825;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
+    @keyframes goyang {
+        0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    75% {
+      transform: translateX(-10px);
+    }
+    100% {
+      transform: translateX(0);
+            }
+        }
+    }
+      </style>
     <style>
       body {
         display: flex;
