@@ -64,7 +64,7 @@
         overflow-x: hidden;
     }
     nav {
-        position: fixed;
+        position: sticky;
         top: 0;
         z-index: 999;
     }
@@ -94,7 +94,7 @@
 <body>
 
     <!-- navigasi -->
-    <nav id="navbar" clas-s="fixed top-0 w-[100%] z-1000 order-1 sm:order-2 lg:order-1" x-data="{open: false}">
+    <nav id="navbar" class="fixed top-0 w-[100%] z-1000 order-1 sm:order-2 lg:order-1" x-data="{open: false}">
         <div class="flex px-8 py-3 justify-between items-center">
             <img src="public/image/logo-hamburger.svg" alt="" class="cursor-pointer block sm:block lg:hidden order-2 sm:order-1" @click="open = !open">
             <img src="public/image/logo-navigasi.svg" alt="" class="order-1 sm:order-2">
