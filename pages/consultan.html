@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- tailwind.css -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+        tailwind.config = {
+        theme: {
+        extend: {
+          fontFamily: {
+            "popins-bold"       : "popins-bold",
+            "popins-thin"       : "popins-thin",
+            "plus-jakarta-sans" : "plus-jakarta",
+          },
+          colors: {
+            "ungu"        : "#5D50C6",
+            "putih"       : "#FFFFFF",
+            "putih-filter": "#EEEEEE",
+            "putih-abu"   : "#F4F4F4",
+            "orange"      : "#FF5722",
+            "pink"        : "#F85E9F",
+            "hitam"       : "#191825",
+            "hitam-ungu"  : "#150050",
+            "background"  : "linear-gradient(145deg, #cacaca, #f0f0f0)",
+          },
+          boxShadow: {
+            "custom"      : "0 2px 4px rgba(0, 0, 0, 0.1)",
+            "card"        : "0 4px 8px rgba(0, 0, 0, 0.1)",
+            "custom-two"  : "5px 5px 10px #d5d5d5,-5px -5px 10px #ebebeb",
+                    },
+                },
+           },
+        plugins: [],
+        };
+        </script>
+    
+        <style type="text/tailwindcss">
+        @layer utilities {
+        @font-face {
+            font-family: "popins";
+            src: url("../public/font/Poppins/Poppins-Medium.ttf");
+        }
+        @font-face {
+            font-family: "popins-bold";
+            src: url("../public/font/Poppins/Poppins-Black.ttf");
+        }
+        @font-face {
+            font-family: "popins-thin";
+            src: url("../public/font/Poppins/Poppins-Light.ttf");
+        }
+        @font-face {
+            font-family: "plus-jakarta";
+            src: url("../public/font/Plus_Jakarta_Sans/PlusJakartaSans-Italic-VariableFont_wght.ttf");
+        }
+        html {
+            font-family: "popins";
+            color: #191825;
+        }
+        body {
+            overflow-x: hidden;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        @keyframes goyang {
+            0% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(-10px);
+        }
+        50% {
+          transform: translateX(10px);
+        }
+        75% {
+          transform: translateX(-10px);
+        }
+        100% {
+          transform: translateX(0);
+                }
+            }
+        }
+          </style>
+      </head>
+      <style>
+        .custom-div {
+          box-sizing: border-box; /* Memasukkan padding dalam perhitungan lebar */
+          padding: 20px; /* Padding pada div */
+          background-color: #fff;
+          border-radius: 10px;
+          box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .btn-2 {
+          background-color: #f85e9f;
+        }
+        .btn-2:hover {
+          background-color: #150050;
+        }
+        .btn-1 {
+          background-color: #ff5722;
+        }
+        .btn-1:hover {
+          background-color: #150050;
+        }
+        #navbar {
+          display: none;
+        }
+        .second-options-centered {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+        }
+    
+        .custom-div {
+          /* CSS lainnya */
+          /* Tambahkan properti berikut untuk memposisikan di tengah */
+          margin: auto;
+        }
+    
+        .search-kom {
+          background-color: #ffffff;
+          border: 2px solid #150050;
+          border-radius: 10px;
+        }
+        .btn-cari {
+          background-color: #f85e9f;
+          color: #ffffff;
+          padding: 8px 20px;
+          border-radius: 10px;
+        }
+        .btn-cari2 {
+          background-color: #ff5722;
+          color: #ffffff;
+          padding: 8px 20px;
+          border-radius: 10px;
+        }
+        .btn-cari:hover {
+          background-color: #150050;
+        }
+        .btn-cari2:hover {
+          background-color: #150050;
+        }
+        .card {
+          box-sizing: border-box; /* Memasukkan padding dalam perhitungan lebar */
+          width: 200px; /* Lebar div */
+          padding: 10px; /* Padding pada div */
+          background-color: #fff;
+          border-radius: 10px;
+          box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .sub-judul {
+          font-size: 14px;
+          margin-bottom: 6px;
+        }
+        .card-card {
+          gap: 50px;
+          padding-top: 80px;
+        }
+        .btn-load {
+          margin-top: 50px;
+        }
+        .nav-chat {
+          background-color: #607274;
+          padding: 10px;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+        .mt-0 {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          padding: 10px;
+          background-color: #ded0b6;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+        }
+        .chat {
+          background-color: white;
+          margin: 50px;
+          width: 60px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          border-radius: 5px;
+          text-align: center;
+          justify-items: center;
+        }
+        .chat-buble {
+          background-color: #b6c4b6;
+          width: 100%;
+          height: 480px;
+          margin: 50px;
+          padding: 0;
+          border-radius: 10px;
+          position: relative;
+        }
+        .buble {
+          background-color: #b6c4b6;
+          width: 100%;
+          height: 480px;
+          margin: 50px;
+          padding: 0;
+          border-radius: 10px;
+          position: relative;
+        }
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #191825;
+          margin: 0;
+          height: 100vh;
+        }
+        .btn-22 {
+          background-color: #150050;
+          margin-top: 60px;
+        }
+      </style>
+</head>
+<body>
+    <!-- chat consultan -->
+    <section class="chat-buble">
+        <div class="nav-chat">
+          <div class="px-6 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+              <a href="../index.html">
+                <button>
+                    <ion-icon name="arrow-back-outline" class="text-3xl" style="color: white"></ion-icon>
+                  </button>
+              </a>
+              <img src="../public/image/image-dokter-konsultan.svg" alt="" width="50px" style="border-radius: 50px"/>
+              <h2 class="text-xl text-putih-abu">Dr. Mei Cristina</h2>
+            </div>
+            <div class="flex gap-5 text-putih-abu">
+                <ion-icon name="ribbon-outline" class="text-3xl"></ion-icon>
+              <button class="startButton">
+                <ion-icon name="videocam-outline" class="text-3xl"></ion-icon>
+              </button>
+              <button class="stopButton" style="display: none;">
+                <ion-icon name="videocam-off-outline" class="text-3xl"></ion-icon>
+              </button>
+              <ion-icon name="call-outline" class="text-3xl"></ion-icon>
+              <ion-icon name="ellipsis-vertical-outline" class="text-3xl"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <div class="chat">
+          <div class="px-4">
+            <h1>Hai</h1>
+          </div>
+        </div>
+        <div class="mt-0">
+          <div class="px-8">
+            <div class="flex flex-row gap-5 items-center">
+              <ion-icon name="happy-outline" class="text-3xl"></ion-icon>
+              <ion-icon name="camera-outline" class="text-3xl"></ion-icon>
+              <input type="text" class="px-4 py-2 rounded-md w-full" />
+              <ion-icon name="paper-plane-outline" class="text-3xl"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <video class="localVideo" autoplay muted style="width: 320px; height: 240px;"></video>
+        <video class="remoteVideo" autoplay style="width: 320px; height: 240px;"></video>
+    </section>
+
+    <!-- icon -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <!-- js -->
+    <script>
+    let localStream;
+    let remoteStream;
+    let localVideos = document.getElementsByClassName('localVideo');
+    let remoteVideos = document.getElementsByClassName('remoteVideo');
+    let startButtons = document.getElementsByClassName('startButton');
+    let stopButtons = document.getElementsByClassName('stopButton');
+
+    for (let i = 0; i < startButtons.length; i++) {
+      startButtons[i].addEventListener('click', startCall);
+    }
+
+    for (let i = 0; i < stopButtons.length; i++) {
+      stopButtons[i].addEventListener('click', stopCall);
+    }
+
+    function startCall() {
+      navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+        .then(function(stream) {
+          localStream = stream;
+          for (let i = 0; i < localVideos.length; i++) {
+            localVideos[i].srcObject = stream;
+          }
+
+          // Show stop button and hide start button
+          toggleButtons(true);
+          
+          // Create PeerConnection or use a service like Firebase, Twilio, etc.
+          // For the sake of simplicity, the signaling server is not included here.
+          // You'll need to implement the signaling mechanism to establish a connection between peers.
+          
+          // Code to establish a WebRTC connection goes here
+          
+        })
+        .catch(function(err) {
+          console.log("Error: " + err);
+        });
+    }
+
+    function stopCall() {
+      localStream.getTracks().forEach(track => track.stop());
+      if (remoteStream) {
+        remoteStream.getTracks().forEach(track => track.stop());
+      }
+      for (let i = 0; i < localVideos.length; i++) {
+        localVideos[i].srcObject = null;
+      }
+      for (let i = 0; i < remoteVideos.length; i++) {
+        remoteVideos[i].srcObject = null;
+      }
+
+      // Show start button and hide stop button
+      toggleButtons(false);
+    }
+
+    function toggleButtons(isCalling) {
+      for (let i = 0; i < startButtons.length; i++) {
+        startButtons[i].style.display = isCalling ? 'none' : 'block';
+      }
+      for (let i = 0; i < stopButtons.length; i++) {
+        stopButtons[i].style.display = isCalling ? 'block' : 'none';
+      }
+    }
+    </script>
+</body>
+</html>
