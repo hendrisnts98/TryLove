@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/dist/output.css" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+      }
+      .custom-div {
+        box-sizing: border-box; /* Memasukkan padding dalam perhitungan lebar */
+        padding: 20px; /* Padding pada div */
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      .btn-2 {
+        background-color: #f85e9f;
+      }
+      .btn-2:hover {
+        background-color: #150050;
+      }
+      .btn-1 {
+        background-color: #ff5722;
+      }
+      .btn-1:hover {
+        background-color: #150050;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- quest 1 -->
+    <div class="custom-div first-options">
+      <h2 class="text-2xl font-bold mb-3 text-justify text-hitam-ungu">
+        Hai! Kami ingin lebih mengenal Anda.
+      </h2>
+      <p class="mb-5 text-hitam">Mohon mengisi informasi Nama Anda.</p>
+      <div class="flex justify-between">
+          <input
+            type="text"
+            name=""
+            id=""
+            class="py-3 px-4 border border-black rounded-lg"
+            placeholder="Nama Anda"
+          />
+        <button
+          onclick="redirectTo('option1')"
+          class="btn-2 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+
+    <!-- quest 2 -->
+
+    <div class="custom-div second-options hidden">
+      <h2 class="text-2xl font-bold mb-3 text-justify text-hitam-ungu">
+        Hai! Kami ingin lebih mengenal Anda.
+      </h2>
+      <p class="mb-5 text-hitam">
+        Mohon mengisi informasi jenis kelamin pada profil Anda.
+      </p>
+      <div class="flex justify-center gap-8">
+        <button
+          onclick="redirectTo('option1')"
+          class="btn-1 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          Laki Laki
+        </button>
+        <button
+          onclick="redirectTo('option2')"
+          class="btn-2 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          Perempuan
+        </button>
+      </div>
+    </div>
+
+    <!-- quest 3 -->
+
+    <div class="custom-div next-options hidden">
+      <h2 class="text-2xl font-bold mb-3 text-justify text-hitam-ungu">
+        Hai! Kami ingin lebih mengenal Anda.
+      </h2>
+      <p class="mb-5 text-hitam">
+        Mohon mengisi informasi Umur pada profil Anda.
+      </p>
+      <div class="flex justify-center gap-8">
+        <button
+          onclick="redirectTo('option-done')"
+          class="btn-1 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          15-25 Tahun
+        </button>
+        <button
+          onclick="redirectTo('option-done')"
+          class="btn-2 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          25-45 Tahun
+        </button>
+      </div>
+    </div>
+
+    <script>
+      function redirectTo(option) {
+        var firstOptions = document.querySelector(".first-options");
+        var secondOptions = document.querySelector(".second-options");
+        var nextOptions = document.querySelector(".next-options");
+
+        if (option === "option1" || option === "option2") {
+          if (secondOptions && secondOptions.style.display !== "block") {
+            if (firstOptions) {
+              firstOptions.style.display = "none";
+            }
+            if (secondOptions) {
+              secondOptions.style.display = "block";
+            }
+          } else if (nextOptions && nextOptions.style.display !== "block") {
+            if (secondOptions) {
+              secondOptions.style.display = "none";
+            }
+            if (nextOptions) {
+              nextOptions.style.display = "block";
+            }
+          }
+        } else if (option === "option-done") {
+          window.location.href = "soulmate.html";
+        }
+      }
+    </script>
+  </body>
+</html>

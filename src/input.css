@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "popins";
+    src: url("/public/font/Poppins/Poppins-Medium.ttf");
+  }
+  @font-face {
+    font-family: "popins-bold";
+    src: url("/public/font/Poppins/Poppins-Black.ttf");
+  }
+  @font-face {
+    font-family: "popins-thin";
+    src: url("/public/font/Poppins/Poppins-Light.ttf");
+  }
+  @font-face {
+    font-family: "plus-jakarta";
+    src: url("/public/font/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf");
+  }
+  html {
+    font-family: "popins";
+    color: #191825;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    /* background-color: black;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  }
+  @keyframes goyang {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    75% {
+      transform: translateX(-10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}

@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/dist/output.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @layer base {
+  @font-face {
+    font-family: "popins";
+    src: url("/public/font/Poppins/Poppins-Medium.ttf");
+  }
+  @font-face {
+    font-family: "popins-bold";
+    src: url("/public/font/Poppins/Poppins-Black.ttf");
+  }
+  @font-face {
+    font-family: "popins-thin";
+    src: url("/public/font/Poppins/Poppins-Light.ttf");
+  }
+  @font-face {
+    font-family: "plus-jakarta";
+    src: url("/public/font/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf");
+  }
+  html {
+    font-family: "popins";
+    color: #191825;
+  }
+  body {
+    overflow-x: hidden;
+  }
+      }
+    </style>
+  </head>
+  <style>
+    .custom-div {
+      box-sizing: border-box; /* Memasukkan padding dalam perhitungan lebar */
+      padding: 20px; /* Padding pada div */
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .btn-2 {
+      background-color: #f85e9f;
+    }
+    .btn-2:hover {
+      background-color: #150050;
+    }
+    .btn-1 {
+      background-color: #ff5722;
+    }
+    .btn-1:hover {
+      background-color: #150050;
+    }
+    #navbar {
+      display: none;
+    }
+    .second-options-centered {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .custom-div {
+      /* CSS lainnya */
+      /* Tambahkan properti berikut untuk memposisikan di tengah */
+      margin: auto;
+    }
+
+    .search-kom {
+      background-color: #ffffff;
+      border: 2px solid #150050;
+      border-radius: 10px;
+    }
+    .btn-cari {
+      background-color: #f85e9f;
+      color: #ffffff;
+      padding: 8px 20px;
+      border-radius: 10px;
+    }
+    .btn-cari2 {
+      background-color: #ff5722;
+      color: #ffffff;
+      padding: 8px 20px;
+      border-radius: 10px;
+    }
+    .btn-cari:hover {
+      background-color: #150050;
+    }
+    .btn-cari2:hover {
+      background-color: #150050;
+    }
+    .card {
+      box-sizing: border-box; /* Memasukkan padding dalam perhitungan lebar */
+      width: 200px; /* Lebar div */
+      padding: 10px; /* Padding pada div */
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .sub-judul {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    .card-card {
+      gap: 50px;
+      padding-top: 80px;
+    }
+    .btn-load {
+      margin-top: 50px;
+    }
+    .nav-chat {
+      background-color: #607274;
+      padding: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .mt-0 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px;
+      background-color: #ded0b6;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    .chat {
+      background-color: white;
+      margin: 50px;
+      width: 80px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      border-radius: 5px;
+      text-align: center;
+      justify-items: center;
+    }
+    .chat-buble {
+      background-color: #b6c4b6;
+      width: 100%;
+      height: 480px;
+      margin: 50px;
+      padding: 0;
+      border-radius: 10px;
+      position: relative;
+    }
+    .buble {
+      background-color: #b6c4b6;
+      width: 100%;
+      height: 480px;
+      margin: 50px;
+      padding: 0;
+      border-radius: 10px;
+      position: relative;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      margin: 0;
+      height: 100vh;
+    }
+    .btn-22 {
+      background-color: #150050;
+      margin-top: 60px;
+    }
+  </style>
+  <body class="second-options-centered">
+    <!-- quest 1 -->
+    <div class="custom-div first-options w-[80%] sm:w-[80%] md:w-[30%]">
+      <img src="/public/image/3210116.jpg" alt="" />
+      <h2 class="text-2xl font-bold mb-3 mt-3 text-center text-hitam-ungu">
+        Selamat Akun Anda telah Terdaftar
+      </h2>
+      <div class="flex justify-center gap-8">
+        <button
+          onclick="showSecondOptions()"
+          class="btn-1 py-3 px-4 rounded-lg text-putih-abu"
+        >
+          Oke!
+        </button>
+      </div>
+    </div>
+
+    <!-- quest 2 -->
+    <div class="custom-div second-options hidden">
+      <h2 class="text-2xl font-bold mb-3 text-center text-hitam-ungu">
+        Selamat Datang di Trylovve,
+      </h2>
+      <p class="mb-5 text-hitam text-center">Apa yang sedang kamu cari</p>
+      <div class="flex justify-center gap-8">
+        <button
+          onclick="showElemenUtama1()"
+          class="btn-1 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          Boy Friend
+        </button>
+        <button
+          onclick="showElemenUtama()"
+          class="btn-2 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          Girl Friend
+        </button>
+      </div>
+    </div>
+
+    <!-- elemen wanita -->
+    <section class="elemen-utama hidden">
+      <div class="flex flex-col justify-center items-center">
+        <div class="flex gap-3">
+          <a href="../index.html" class="btn-cari2">
+            <button class="text-center items-center flex justify-center">
+              <ion-icon name="home-outline" class="text-2xl text-white"></ion-icon> 
+            </button>
+          </a>
+          <input
+            type="text"
+            name=""
+            id=""
+            class="py-3 px-4 border border-black rounded-lg"
+            placeholder="Your Type"
+          />
+          <button class="btn-cari text-center items-center flex justify-center">
+            <ion-icon
+              name="search-outline"
+              class="text-2xl text-white"
+            ></ion-icon>
+          </button>
+        </div>
+        <div class="flex flex-col lg:flex-row sm:flex-row card-card">
+          <div class="card flex flex-col items-center text-center">
+            <div>
+              <img src="/public/image/image-wanita2.svg" alt="" />
+            </div>
+            <h1 class="mt-2 text-2xl">Freya</h1>
+            <p class="mt-1 sub-judul">Member of JKT48</p>
+            <div class="flex items-center gap-3">
+              <button onclick="showChatGirl1()">
+                <ion-icon
+                  name="chatbubble-ellipses-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+              <button>
+                <ion-icon
+                  name="game-controller-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+              <button>
+                <ion-icon name="thumbs-up-outline" class="text-2xl"></ion-icon>
+              </button>
+              <button>
+                <ion-icon
+                  name="thumbs-down-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+            </div>
+          </div>
+          <div class="card flex flex-col items-center text-center">
+            <div>
+              <img src="/public/image/image-wanita1.svg" alt="" />
+            </div>
+            <h1 class="mt-2 text-2xl">Mei Cristina</h1>
+            <p class="mt-1 sub-judul">Intact but Fragile</p>
+            <div class="flex items-center gap-3">
+              <button onclick="showChatGirl()">
+                <ion-icon
+                  name="chatbubble-ellipses-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+              <button>
+                <ion-icon
+                  name="game-controller-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+              <button>
+                <ion-icon name="thumbs-up-outline" class="text-2xl"></ion-icon>
+              </button>
+              <button>
+                <ion-icon
+                  name="thumbs-down-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+            </div>
+          </div>
+          <div class="card flex flex-col items-center text-center">
+            <div>
+              <img src="/public/image/image-wanita3.svg" alt="" />
+            </div>
+            <h1 class="mt-2 text-2xl">Kayes</h1>
+            <p class="mt-1 sub-judul">Member of ONIC</p>
+            <div class="flex items-center gap-3">
+              <button onclick="showChatGirl2()">
+                <ion-icon
+                  name="chatbubble-ellipses-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+              <button>
+                <ion-icon
+                  name="game-controller-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+              <button>
+                <ion-icon name="thumbs-up-outline" class="text-2xl"></ion-icon>
+              </button>
+              <button>
+                <ion-icon
+                  name="thumbs-down-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+            </div>
+          </div>
+          <div class="card flex flex-col items-center text-center">
+            <div>
+              <img src="/public/image/image-wanita4.svg" alt="" />
+            </div>
+            <h1 class="mt-2 text-2xl">Raquel</h1>
+            <p class="mt-1 sub-judul">Actor of Money Heist</p>
+            <div class="flex items-center gap-3">
+              <button onclick="showChatGirl3()">
+                <ion-icon
+                  name="chatbubble-ellipses-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+              <button>
+                <ion-icon
+                  name="game-controller-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+              <button>
+                <ion-icon name="thumbs-up-outline" class="text-2xl"></ion-icon>
+              </button>
+              <button>
+                <ion-icon
+                  name="thumbs-down-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button class="btn-22 py-3 px-6 rounded-lg text-putih-abu btn-load">
+            Load More
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- chat cewe -->
+    <section class="chat-buble hidden">
+      <div class="nav-chat">
+        <div class="px-6 flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <button onclick="backHome()">
+              <ion-icon
+                name="arrow-back-outline"
+                class="text-3xl"
+                style="color: white"
+              ></ion-icon>
+            </button>
+            <img
+              src="/public/image/image-wanita1.svg"
+              alt=""
+              width="50px"
+              style="border-radius: 50px"
+            />
+            <h2 class="text-xl text-putih-abu">Mei Cristina</h2>
+          </div>
+          <div class="flex gap-5 text-putih-abu">
+            <ion-icon
+              name="game-controller-outline"
+              class="text-3xl"
+            ></ion-icon>
+            <button class="startButton">
+              <ion-icon name="videocam-outline" class="text-3xl"></ion-icon>
+            </button>
+            <button class="stopButton" style="display: none;">
+              <ion-icon name="videocam-off-outline" class="text-3xl"></ion-icon>
+            </button>
+            <ion-icon name="call-outline" class="text-3xl"></ion-icon>
+            <ion-icon
+              name="ellipsis-vertical-outline"
+              class="text-3xl"
+            ></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="chat">
+        <div class="px-4">
+          <h1>Hallo</h1>
+        </div>
+      </div>
+      <div class="mt-0">
+        <div class="px-8">
+          <div class="flex flex-row gap-5 items-center">
+            <ion-icon name="happy-outline" class="text-3xl"></ion-icon>
+            <ion-icon name="camera-outline" class="text-3xl"></ion-icon>
+            <input type="text" class="px-4 py-2 rounded-md w-full" />
+            <ion-icon name="paper-plane-outline" class="text-3xl"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <video class="localVideo" autoplay muted style="width: 320px; height: 240px;"></video>
+  <video class="remoteVideo" autoplay style="width: 320px; height: 240px;"></video>
+    </section>
+
+    <!-- chat cewe 2 -->
+    <section class="buble chat-buble1 hidden">
+      <div class="nav-chat">
+        <div class="px-6 flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <button onclick="backHome1()">
+              <ion-icon
+                name="arrow-back-outline"
+                class="text-3xl"
+                style="color: white"
+              ></ion-icon>
+            </button>
+            <img
+              src="/public/image/image-wanita2.svg"
+              alt=""
+              width="50px"
+              style="border-radius: 50px"
+            />
+            <h2 class="text-xl text-putih-abu">Freya</h2>
+          </div>
+          <div class="flex gap-5 text-putih-abu">
+            <ion-icon
+              name="game-controller-outline"
+              class="text-3xl"
+            ></ion-icon>
+            <button class="startButton">
+              <ion-icon name="videocam-outline" class="text-3xl"></ion-icon>
+            </button>
+            <button class="stopButton" style="display: none;">
+              <ion-icon name="videocam-off-outline" class="text-3xl"></ion-icon>
+            </button>
+            <ion-icon name="call-outline" class="text-3xl"></ion-icon>
+            <ion-icon
+              name="ellipsis-vertical-outline"
+              class="text-3xl"
+            ></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="chat">
+        <div class="px-4">
+          <h1>Hallo</h1>
+        </div>
+      </div>
+      <div class="mt-0">
+        <div class="px-8">
+          <div class="flex flex-row gap-5 items-center">
+            <ion-icon name="happy-outline" class="text-3xl"></ion-icon>
+            <ion-icon name="camera-outline" class="text-3xl"></ion-icon>
+            <input type="text" class="px-4 py-2 rounded-md w-full" />
+            <ion-icon name="paper-plane-outline" class="text-3xl"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <video class="localVideo" autoplay muted style="width: 320px; height: 240px;"></video>
+  <video class="remoteVideo" autoplay style="width: 320px; height: 240px;"></video>
+    </section>
+    <!-- chat cewe 3 -->
+    <section class="buble chat-buble2 hidden">
+      <div class="nav-chat">
+        <div class="px-6 flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <button onclick="backHome2()">
+              <ion-icon
+                name="arrow-back-outline"
+                class="text-3xl"
+                style="color: white"
+              ></ion-icon>
+            </button>
+            <img
+              src="/public/image/image-wanita3.svg"
+              alt=""
+              width="50px"
+              style="border-radius: 50px"
+            />
+            <h2 class="text-xl text-putih-abu">Kayes</h2>
+          </div>
+          <div class="flex gap-5 text-putih-abu">
+            <ion-icon
+              name="game-controller-outline"
+              class="text-3xl"
+            ></ion-icon>
+            <button class="startButton">
+              <ion-icon name="videocam-outline" class="text-3xl"></ion-icon>
+            </button>
+            <button class="stopButton" style="display: none;">
+              <ion-icon name="videocam-off-outline" class="text-3xl"></ion-icon>
+            </button>
+            <ion-icon name="call-outline" class="text-3xl"></ion-icon>
+            <ion-icon
+              name="ellipsis-vertical-outline"
+              class="text-3xl"
+            ></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="chat">
+        <div class="px-4">
+          <h1>Hallo</h1>
+        </div>
+      </div>
+      <div class="mt-0">
+        <div class="px-8">
+          <div class="flex flex-row gap-5 items-center">
+            <ion-icon name="happy-outline" class="text-3xl"></ion-icon>
+            <ion-icon name="camera-outline" class="text-3xl"></ion-icon>
+            <input type="text" class="px-4 py-2 rounded-md w-full" />
+            <ion-icon name="paper-plane-outline" class="text-3xl"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <video class="localVideo" autoplay muted style="width: 320px; height: 240px;"></video>
+  <video class="remoteVideo" autoplay style="width: 320px; height: 240px;"></video>
+    </section>
+    <!-- chat cewe 4 -->
+    <section class="buble chat-buble3 hidden">
+      <div class="nav-chat">
+        <div class="px-6 flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <button onclick="backHome3()">
+              <ion-icon
+                name="arrow-back-outline"
+                class="text-3xl"
+                style="color: white"
+              ></ion-icon>
+            </button>
+            <img
+              src="/public/image/image-wanita4.svg"
+              alt=""
+              width="50px"
+              style="border-radius: 50px"
+            />
+            <h2 class="text-xl text-putih-abu">Raquel</h2>
+          </div>
+          <div class="flex gap-5 text-putih-abu">
+            <ion-icon
+              name="game-controller-outline"
+              class="text-3xl"
+            ></ion-icon>
+            <button class="startButton">
+              <ion-icon name="videocam-outline" class="text-3xl"></ion-icon>
+            </button>
+            <button class="stopButton" style="display: none;">
+              <ion-icon name="videocam-off-outline" class="text-3xl"></ion-icon>
+            </button>
+            <ion-icon name="call-outline" class="text-3xl"></ion-icon>
+            <ion-icon
+              name="ellipsis-vertical-outline"
+              class="text-3xl"
+            ></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="chat">
+        <div class="px-4">
+          <h1>Hallo</h1>
+        </div>
+      </div>
+      <div class="mt-0">
+        <div class="px-8">
+          <div class="flex flex-row gap-5 items-center">
+            <ion-icon name="happy-outline" class="text-3xl"></ion-icon>
+            <ion-icon name="camera-outline" class="text-3xl"></ion-icon>
+            <input type="text" class="px-4 py-2 rounded-md w-full" />
+            <ion-icon name="paper-plane-outline" class="text-3xl"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <video class="localVideo" autoplay muted style="width: 320px; height: 240px;"></video>
+  <video class="remoteVideo" autoplay style="width: 320px; height: 240px;"></video>
+    </section>
+
+    <!-- cowo -->
+    <section class="elemen-slip hidden">
+      <div class="flex flex-col justify-center items-center">
+        <div class="flex gap-3">
+          <a href="../index.html" class="btn-cari2">
+            <button class="text-center items-center flex justify-center">
+              <ion-icon name="home-outline" class="text-2xl text-white"></ion-icon> 
+            </button>
+          </a>
+          <input
+            type="text"
+            name=""
+            id=""
+            class="py-3 px-4 border border-black rounded-lg"
+            placeholder="Your Type"
+          />
+          <button class="btn-cari text-center items-center flex justify-center">
+            <ion-icon
+              name="search-outline"
+              class="text-2xl text-purple-50"
+            ></ion-icon>
+          </button>
+        </div>
+        <div class="flex flex-col sm:flex-row lg:flex-row card-card">
+          <div class="card flex flex-col items-center text-center">
+            <div>
+              <img src="/public/image/image-cowo1.svg" alt="" />
+            </div>
+            <h1 class="mt-2 text-2xl">Coki Pardede</h1>
+            <p class="mt-1 sub-judul">Leader of WHY</p>
+            <div class="flex items-center gap-3">
+              <button onclick="showChatBoy()">
+                <ion-icon
+                  name="chatbubble-ellipses-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+              <button>
+                <ion-icon
+                  name="game-controller-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+              <button>
+                <ion-icon name="thumbs-up-outline" class="text-2xl"></ion-icon>
+              </button>
+              <button>
+                <ion-icon
+                  name="thumbs-down-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+            </div>
+          </div>
+          <div class="card flex flex-col items-center text-center">
+            <div>
+              <img src="/public/image/image-cowo2.svg" alt="" />
+            </div>
+            <h1 class="mt-2 text-2xl">Dustin</h1>
+            <p class="mt-1 sub-judul">Member of WHY</p>
+            <div class="flex items-center gap-3">
+              <button onclick="showChatBoy1()">
+                <ion-icon
+                  name="chatbubble-ellipses-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+              <button>
+                <ion-icon
+                  name="game-controller-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+              <button>
+                <ion-icon name="thumbs-up-outline" class="text-2xl"></ion-icon>
+              </button>
+              <button>
+                <ion-icon
+                  name="thumbs-down-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+            </div>
+          </div>
+          <div class="card flex flex-col items-center text-center">
+            <div>
+              <img src="/public/image/image-cowo3.svg" alt="" />
+            </div>
+            <h1 class="mt-2 text-2xl">Deddy</h1>
+            <p class="mt-1 sub-judul">Youtuber</p>
+            <div class="flex items-center gap-3">
+              <button onclick="showChatBoy2()">
+                <ion-icon
+                  name="chatbubble-ellipses-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+              <button>
+                <ion-icon
+                  name="game-controller-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+              <button>
+                <ion-icon name="thumbs-up-outline" class="text-2xl"></ion-icon>
+              </button>
+              <button>
+                <ion-icon
+                  name="thumbs-down-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+            </div>
+          </div>
+          <div class="card flex flex-col items-center text-center">
+            <div>
+              <img src="/public/image/image-cowo4.svg" alt="" />
+            </div>
+            <h1 class="mt-2 text-2xl">Windah</h1>
+            <p class="mt-1 sub-judul">Streamer</p>
+            <div class="flex items-center gap-3">
+              <button onclick="showChatBoy3()">
+                <ion-icon
+                  name="chatbubble-ellipses-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+              <button>
+                <ion-icon
+                  name="game-controller-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+              <button>
+                <ion-icon name="thumbs-up-outline" class="text-2xl"></ion-icon>
+              </button>
+              <button>
+                <ion-icon
+                  name="thumbs-down-outline"
+                  class="text-2xl"
+                ></ion-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button class="btn-22 py-3 px-6 rounded-lg text-putih-abu btn-load">
+            Load More
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- chat cowo -->
+    <section class="buble chat-buble4 hidden">
+      <div class="nav-chat">
+        <div class="px-6 flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <button onclick="backHome4()">
+              <ion-icon
+                name="arrow-back-outline"
+                class="text-3xl"
+                style="color: white"
+              ></ion-icon>
+            </button>
+            <img
+              src="/public/image/image-cowo1.svg"
+              alt=""
+              width="50px"
+              style="border-radius: 50px"
+            />
+            <h2 class="text-xl text-putih-abu">Coki Pardede</h2>
+          </div>
+          <div class="flex gap-5 text-putih-abu">
+            <ion-icon
+              name="game-controller-outline"
+              class="text-3xl"
+            ></ion-icon>
+            <button class="startButton">
+              <ion-icon name="videocam-outline" class="text-3xl"></ion-icon>
+            </button>
+            <button class="stopButton" style="display: none;">
+              <ion-icon name="videocam-off-outline" class="text-3xl"></ion-icon>
+            </button>
+            <ion-icon name="call-outline" class="text-3xl"></ion-icon>
+            <ion-icon
+              name="ellipsis-vertical-outline"
+              class="text-3xl"
+            ></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="chat">
+        <div class="px-4">
+          <h1>Hallo</h1>
+        </div>
+      </div>
+      <div class="mt-0">
+        <div class="px-8">
+          <div class="flex flex-row gap-5 items-center">
+            <ion-icon name="happy-outline" class="text-3xl"></ion-icon>
+            <ion-icon name="camera-outline" class="text-3xl"></ion-icon>
+            <input type="text" class="px-4 py-2 rounded-md w-full" />
+            <ion-icon name="paper-plane-outline" class="text-3xl"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <video class="localVideo" autoplay muted style="width: 320px; height: 240px;"></video>
+  <video class="remoteVideo" autoplay style="width: 320px; height: 240px;"></video>
+    </section>
+
+    <!-- chat cewe 2 -->
+    <section class="buble chat-buble5 hidden">
+      <div class="nav-chat">
+        <div class="px-6 flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <button onclick="backHome5()">
+              <ion-icon
+                name="arrow-back-outline"
+                class="text-3xl"
+                style="color: white"
+              ></ion-icon>
+            </button>
+            <img
+              src="/public/image/image-cowo2.svg"
+              alt=""
+              width="50px"
+              style="border-radius: 50px"
+            />
+            <h2 class="text-xl text-putih-abu">Dustin</h2>
+          </div>
+          <div class="flex gap-5 text-putih-abu">
+            <ion-icon
+              name="game-controller-outline"
+              class="text-3xl"
+            ></ion-icon>
+            <button class="startButton">
+              <ion-icon name="videocam-outline" class="text-3xl"></ion-icon>
+            </button>
+            <button class="stopButton" style="display: none;">
+              <ion-icon name="videocam-off-outline" class="text-3xl"></ion-icon>
+            </button>
+            <ion-icon name="call-outline" class="text-3xl"></ion-icon>
+            <ion-icon
+              name="ellipsis-vertical-outline"
+              class="text-3xl"
+            ></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="chat">
+        <div class="px-4">
+          <h1>Hallo</h1>
+        </div>
+      </div>
+      <div class="mt-0">
+        <div class="px-8">
+          <div class="flex flex-row gap-5 items-center">
+            <ion-icon name="happy-outline" class="text-3xl"></ion-icon>
+            <ion-icon name="camera-outline" class="text-3xl"></ion-icon>
+            <input type="text" class="px-4 py-2 rounded-md w-full" />
+            <ion-icon name="paper-plane-outline" class="text-3xl"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <video class="localVideo" autoplay muted style="width: 320px; height: 240px;"></video>
+      <video class="remoteVideo" autoplay style="width: 320px; height: 240px;"></video>
+    </section>
+    <!-- chat cewe 3 -->
+    <section class="buble chat-buble6 hidden">
+      <div class="nav-chat">
+        <div class="px-6 flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <button onclick="backHome6()">
+              <ion-icon
+                name="arrow-back-outline"
+                class="text-3xl"
+                style="color: white"
+              ></ion-icon>
+            </button>
+            <img
+              src="/public/image/image-cowo3.svg"
+              alt=""
+              width="50px"
+              style="border-radius: 50px"
+            />
+            <h2 class="text-xl text-putih-abu">Deddy</h2>
+          </div>
+          <div class="flex gap-5 text-putih-abu">
+            <ion-icon
+              name="game-controller-outline"
+              class="text-3xl"
+            ></ion-icon>
+            <button class="startButton">
+              <ion-icon name="videocam-outline" class="text-3xl"></ion-icon>
+            </button>
+            <button class="stopButton" style="display: none;">
+              <ion-icon name="videocam-off-outline" class="text-3xl"></ion-icon>
+            </button>
+            <ion-icon name="call-outline" class="text-3xl"></ion-icon>
+            <ion-icon
+              name="ellipsis-vertical-outline"
+              class="text-3xl"
+            ></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="chat">
+        <div class="px-4">
+          <h1>Hallo</h1>
+        </div>
+      </div>
+      <div class="mt-0">
+        <div class="px-8">
+          <div class="flex flex-row gap-5 items-center">
+            <ion-icon name="happy-outline" class="text-3xl"></ion-icon>
+            <ion-icon name="camera-outline" class="text-3xl"></ion-icon>
+            <input type="text" class="px-4 py-2 rounded-md w-full" />
+            <ion-icon name="paper-plane-outline" class="text-3xl"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <video class="localVideo" autoplay muted style="width: 320px; height: 240px;"></video>
+      <video class="remoteVideo" autoplay style="width: 320px; height: 240px;"></video>
+    </section>
+    <!-- chat cewe 4 -->
+    <section class="buble chat-buble7 hidden">
+      <div class="nav-chat">
+        <div class="px-6 flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <button onclick="backHome7()">
+              <ion-icon
+                name="arrow-back-outline"
+                class="text-3xl"
+                style="color: white"
+              ></ion-icon>
+            </button>
+            <img
+              src="/public/image/image-cowo4.svg"
+              alt=""
+              width="50px"
+              style="border-radius: 50px"
+            />
+            <h2 class="text-xl text-putih-abu">Windah</h2>
+          </div>
+          <div class="flex gap-5 text-putih-abu">
+            <ion-icon
+              name="game-controller-outline"
+              class="text-3xl"
+            ></ion-icon>
+            <button class="startButton">
+              <ion-icon name="videocam-outline" class="text-3xl"></ion-icon>
+            </button>
+            <button class="stopButton" style="display: none;">
+              <ion-icon name="videocam-off-outline" class="text-3xl"></ion-icon>
+            </button>
+            <ion-icon name="call-outline" class="text-3xl"></ion-icon>
+            <ion-icon
+              name="ellipsis-vertical-outline"
+              class="text-3xl"
+            ></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="chat">
+        <div class="px-4">
+          <h1>Hallo</h1>
+        </div>
+      </div>
+      <div class="mt-0">
+        <div class="px-8">
+          <div class="flex flex-row gap-5 items-center">
+            <ion-icon name="happy-outline" class="text-3xl"></ion-icon>
+            <ion-icon name="camera-outline" class="text-3xl"></ion-icon>
+            <input type="text" class="px-4 py-2 rounded-md w-full" />
+            <ion-icon name="paper-plane-outline" class="text-3xl"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <video class="localVideo" autoplay muted style="width: 320px; height: 240px;"></video>
+      <video class="remoteVideo" autoplay style="width: 320px; height: 240px;"></video>
+    </section>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script>
+      const firstOptions = document.querySelector(".first-options");
+      const secondOptions = document.querySelector(".second-options");
+      const elemenUtama = document.querySelector(".elemen-utama");
+      const elemenUtama1 = document.querySelector(".elemen-slip");
+      const chatBubble = document.querySelector(".chat-buble");
+      const chatBubble1 = document.querySelector(".chat-buble1");
+      const chatBubble2 = document.querySelector(".chat-buble2");
+      const chatBubble3 = document.querySelector(".chat-buble3");
+      const chatBubble4 = document.querySelector(".chat-buble4");
+      const chatBubble5 = document.querySelector(".chat-buble5");
+      const chatBubble6 = document.querySelector(".chat-buble6");
+      const chatBubble7 = document.querySelector(".chat-buble7");
+
+      // Fungsi untuk menampilkan Div Second Options dan menyembunyikan Div First Options
+      function showSecondOptions() {
+        if (firstOptions) {
+          firstOptions.style.display = "none";
+        }
+        if (secondOptions) {
+          secondOptions.style.display = "block";
+        }
+      }
+
+      // Fungsi untuk menampilkan Elemen Utama dan menyembunyikan Div Second Options
+      function showElemenUtama() {
+        if (secondOptions) {
+          secondOptions.style.display = "none";
+        }
+        if (elemenUtama) {
+          elemenUtama.style.display = "block";
+        }
+      }
+
+      function showElemenUtama1() {
+        if (secondOptions) {
+          secondOptions.style.display = "none";
+        }
+        if (elemenUtama) {
+          elemenUtama.style.display = "none";
+        }
+        if (elemenUtama1) {
+          elemenUtama1.style.display = "block";
+        }
+      }
+
+      // Fungsi untuk menampilkan Chat Bubble dan menyembunyikan semua elemen lainnya
+      function showChatGirl() {
+        if (firstOptions) {
+          firstOptions.style.display = "none";
+        }
+        if (secondOptions) {
+          secondOptions.style.display = "none";
+        }
+        if (elemenUtama) {
+          elemenUtama.style.display = "none";
+        }
+        if (chatBubble) {
+          chatBubble.style.display = "block";
+          document.body.style.backgroundColor = "#191825";
+        }
+      }
+      function showChatGirl1() {
+        if (firstOptions) {
+          firstOptions.style.display = "none";
+        }
+        if (secondOptions) {
+          secondOptions.style.display = "none";
+        }
+        if (elemenUtama) {
+          elemenUtama.style.display = "none";
+        }
+        if (chatBubble1) {
+          chatBubble1.style.display = "block";
+          document.body.style.backgroundColor = "#191825";
+        }
+      }
+      function showChatGirl2() {
+        if (firstOptions) {
+          firstOptions.style.display = "none";
+        }
+        if (secondOptions) {
+          secondOptions.style.display = "none";
+        }
+        if (elemenUtama) {
+          elemenUtama.style.display = "none";
+        }
+        if (chatBubble2) {
+          chatBubble2.style.display = "block";
+          document.body.style.backgroundColor = "#191825";
+        }
+      }
+      function showChatGirl3() {
+        if (firstOptions) {
+          firstOptions.style.display = "none";
+        }
+        if (secondOptions) {
+          secondOptions.style.display = "none";
+        }
+        if (elemenUtama) {
+          elemenUtama.style.display = "none";
+        }
+        if (chatBubble3) {
+          chatBubble3.style.display = "block";
+          document.body.style.backgroundColor = "#191825";
+        }
+      }
+      function backHome3() {
+        if (firstOptions) {
+          firstOptions.style.display = "none";
+        }
+        if (secondOptions) {
+          secondOptions.style.display = "none";
+        }
+        if (elemenUtama) {
+          elemenUtama.style.display = "block";
+          document.body.style.backgroundColor = "#fff";
+        }
+        if (chatBubble3) {
+          chatBubble3.style.display = "none";
+        }
+      }
+      function backHome2() {
+        if (firstOptions) {
+          firstOptions.style.display = "none";
+        }
+        if (secondOptions) {
+          secondOptions.style.display = "none";
+        }
+        if (elemenUtama) {
+          elemenUtama.style.display = "block";
+          document.body.style.backgroundColor = "#fff";
+        }
+        if (chatBubble3) {
+          chatBubble2.style.display = "none";
+        }
+      }
+      function backHome1() {
+        if (firstOptions) {
+          firstOptions.style.display = "none";
+        }
+        if (secondOptions) {
+          secondOptions.style.display = "none";
+        }
+        if (elemenUtama) {
+          elemenUtama.style.display = "block";
+          document.body.style.backgroundColor = "#fff";
+        }
+        if (chatBubble3) {
+          chatBubble1.style.display = "none";
+        }
+      }
+      function backHome() {
+        if (firstOptions) {
+          firstOptions.style.display = "none";
+        }
+        if (secondOptions) {
+          secondOptions.style.display = "none";
+        }
+        if (elemenUtama) {
+          elemenUtama.style.display = "block";
+          document.body.style.backgroundColor = "#fff";
+        }
+        if (chatBubble3) {
+          chatBubble.style.display = "none";
+        }
+      }
+      function showChatBoy() {
+        if (firstOptions) {
+          firstOptions.style.display = "none";
+        }
+        if (secondOptions) {
+          secondOptions.style.display = "none";
+        }
+        if (elemenUtama1) {
+          elemenUtama1.style.display = "none";
+        }
+        if (chatBubble4) {
+          chatBubble4.style.display = "block";
+          document.body.style.backgroundColor = "#191825";
+        }
+      }
+      function showChatBoy1() {
+        if (firstOptions) {
+          firstOptions.style.display = "none";
+        }
+        if (secondOptions) {
+          secondOptions.style.display = "none";
+        }
+        if (elemenUtama1) {
+          elemenUtama1.style.display = "none";
+        }
+        if (chatBubble5) {
+          chatBubble5.style.display = "block";
+          document.body.style.backgroundColor = "#191825";
+        }
+      }
+      function showChatBoy2() {
+        if (firstOptions) {
+          firstOptions.style.display = "none";
+        }
+        if (secondOptions) {
+          secondOptions.style.display = "none";
+        }
+        if (elemenUtama1) {
+          elemenUtama1.style.display = "none";
+        }
+        if (chatBubble6) {
+          chatBubble6.style.display = "block";
+          document.body.style.backgroundColor = "#191825";
+        }
+      }
+      function showChatBoy3() {
+        if (firstOptions) {
+          firstOptions.style.display = "none";
+        }
+        if (secondOptions) {
+          secondOptions.style.display = "none";
+        }
+        if (elemenUtama1) {
+          elemenUtama1.style.display = "none";
+        }
+        if (chatBubble7) {
+          chatBubble7.style.display = "block";
+          document.body.style.backgroundColor = "#191825";
+        }
+      }
+      function backHome4() {
+        if (firstOptions) {
+          firstOptions.style.display = "none";
+        }
+        if (secondOptions) {
+          secondOptions.style.display = "none";
+        }
+        if (elemenUtama) {
+          elemenUtama1.style.display = "block";
+          document.body.style.backgroundColor = "#fff";
+        }
+        if (chatBubble4) {
+          chatBubble4.style.display = "none";
+        }
+      }
+      function backHome5() {
+        if (firstOptions) {
+          firstOptions.style.display = "none";
+        }
+        if (secondOptions) {
+          secondOptions.style.display = "none";
+        }
+        if (elemenUtama) {
+          elemenUtama1.style.display = "block";
+          document.body.style.backgroundColor = "#fff";
+        }
+        if (chatBubble5) {
+          chatBubble5.style.display = "none";
+        }
+      }
+      function backHome6() {
+        if (firstOptions) {
+          firstOptions.style.display = "none";
+        }
+        if (secondOptions) {
+          secondOptions.style.display = "none";
+        }
+        if (elemenUtama) {
+          elemenUtama1.style.display = "block";
+          document.body.style.backgroundColor = "#fff";
+        }
+        if (chatBubble6) {
+          chatBubble6.style.display = "none";
+        }
+      }
+      function backHome7() {
+        if (firstOptions) {
+          firstOptions.style.display = "none";
+        }
+        if (secondOptions) {
+          secondOptions.style.display = "none";
+        }
+        if (elemenUtama) {
+          elemenUtama1.style.display = "block";
+          document.body.style.backgroundColor = "#fff";
+        }
+        if (chatBubble7) {
+          chatBubble7.style.display = "none";
+        }
+      }
+      let localStream;
+    let remoteStream;
+    let localVideos = document.getElementsByClassName('localVideo');
+    let remoteVideos = document.getElementsByClassName('remoteVideo');
+    let startButtons = document.getElementsByClassName('startButton');
+    let stopButtons = document.getElementsByClassName('stopButton');
+
+    for (let i = 0; i < startButtons.length; i++) {
+      startButtons[i].addEventListener('click', startCall);
+    }
+
+    for (let i = 0; i < stopButtons.length; i++) {
+      stopButtons[i].addEventListener('click', stopCall);
+    }
+
+    function startCall() {
+      navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+        .then(function(stream) {
+          localStream = stream;
+          for (let i = 0; i < localVideos.length; i++) {
+            localVideos[i].srcObject = stream;
+          }
+
+          // Show stop button and hide start button
+          toggleButtons(true);
+          
+          // Create PeerConnection or use a service like Firebase, Twilio, etc.
+          // For the sake of simplicity, the signaling server is not included here.
+          // You'll need to implement the signaling mechanism to establish a connection between peers.
+          
+          // Code to establish a WebRTC connection goes here
+          
+        })
+        .catch(function(err) {
+          console.log("Error: " + err);
+        });
+    }
+
+    function stopCall() {
+      localStream.getTracks().forEach(track => track.stop());
+      if (remoteStream) {
+        remoteStream.getTracks().forEach(track => track.stop());
+      }
+      for (let i = 0; i < localVideos.length; i++) {
+        localVideos[i].srcObject = null;
+      }
+      for (let i = 0; i < remoteVideos.length; i++) {
+        remoteVideos[i].srcObject = null;
+      }
+
+      // Show start button and hide stop button
+      toggleButtons(false);
+    }
+
+    function toggleButtons(isCalling) {
+      for (let i = 0; i < startButtons.length; i++) {
+        startButtons[i].style.display = isCalling ? 'none' : 'block';
+      }
+      for (let i = 0; i < stopButtons.length; i++) {
+        stopButtons[i].style.display = isCalling ? 'block' : 'none';
+      }
+    }
+    </script>
+  </body>
+</html>
