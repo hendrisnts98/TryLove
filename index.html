@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TryLovve</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <!-- tailwind.css -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -42,19 +41,19 @@
     @layer utilities {
     @font-face {
         font-family: "popins";
-        src: url("public/font/Poppins/Poppins-Medium.ttf");
+        src: url("../public/font/Poppins/Poppins-Medium.ttf");
     }
     @font-face {
         font-family: "popins-bold";
-        src: url("public/font/Poppins/Poppins-Black.ttf");
+        src: url("../public/font/Poppins/Poppins-Black.ttf");
     }
     @font-face {
         font-family: "popins-thin";
-        src: url("public/font/Poppins/Poppins-Light.ttf");
+        src: url("../public/font/Poppins/Poppins-Light.ttf");
     }
     @font-face {
         font-family: "plus-jakarta";
-        src: url("public/font/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf");
+        src: url("../public/font/Plus_Jakarta_Sans/PlusJakartaSans-Italic-VariableFont_wght.ttf");
     }
     html {
         font-family: "popins";
@@ -86,450 +85,139 @@
             }
         }
     }
-    #home-section{
-        padding-top: 100px;
-    }
       </style>
-    <!-- Animasi on Scroll -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-</head>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+      }
+      .custom-div {
+        box-sizing: border-box; /* Memasukkan padding dalam perhitungan lebar */
+        padding: 20px; /* Padding pada div */
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      .btn-2 {
+        background-color: #f85e9f;
+      }
+      .btn-2:hover {
+        background-color: #150050;
+      }
+      .btn-1 {
+        background-color: #ff5722;
+      }
+      .btn-1:hover {
+        background-color: #150050;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- quest 1 -->
+    <!-- <div class="custom-div first-options">
+      <h2 class="text-2xl font-bold mb-3 text-cen text-hitam-ungu">
+        Hai! Kami ingin lebih mengenal Anda.
+      </h2>
+      <p class="mb-5 text-hitam">Mohon mengisi informasi Nama Anda.</p>
+      <div class="flex justify-between gap-2">
+          <input
+            type="text"
+            name=""
+            id=""
+            class="py-3 px-2 lg:px-4 border border-black rounded-lg"
+            placeholder="Nama Anda"
+          />
+        <button
+          onclick="redirectTo('option1')"
+          class="btn-2 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          Next
+        </button>
+      </div>
+    </div> -->
 
-<body>
+    <!-- quest 2 -->
 
-    <!-- navigasi -->
-    <nav id="navbar" class="fixed top-0 w-[100%] z-1000 order-1 sm:order-2 lg:order-1" x-data="{open: false}">
-        <div class="flex px-8 py-3 justify-between items-center">
-            <img src="public/image/logo-hamburger.svg" alt="" class="cursor-pointer block sm:block lg:hidden order-2 sm:order-1" @click="open = !open">
-            <img src="public/image/logo-navigasi.svg" alt="" class="order-1 sm:order-2">
-            <div class="hidden lg:block lg:order-2">
-                <ul class="flex gap-8 text-xl">
-                    <li><a href="#home-section">Beranda</a></li>
-                    <li><a href="#tentangkami-section">Tentang Kami</a></li>
-                    <li><a href="#layanan-section">Layanan</a></li>
-                    <li><a href="#footer">Kontak</a></li>
-                </ul>
-            </div>
-            <a href="pages/login.html" class="hidden sm:block lg:block sm:order-3 lg:order-3">
-                <button class="bg-ungu text-putih sm:px-6 sm:py-3 lg:px-10 lg:py-3 rounded-lg">
-                    Mulai Sekarang
-                </button>
-            </a>
-        </div>
+    <div class="custom-div second-options hidden">
+      <h2 class="text-2xl font-bold mb-3 text-justify text-hitam-ungu">
+        Hai! Kami ingin lebih mengenal Anda.
+      </h2>
+      <p class="mb-5 text-hitam">
+        Mohon mengisi informasi jenis kelamin pada profil Anda.
+      </p>
+      <div class="flex justify-center gap-8">
+        <button
+          onclick="redirectTo('option1')"
+          class="btn-1 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          Laki Laki
+        </button>
+        <button
+          onclick="redirectTo('option2')"
+          class="btn-2 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          Perempuan
+        </button>
+      </div>
+    </div>
 
-        <!-- navigasi mobile -->
-        <div class="fixed bottom-0 right-0 left-0 p-4 bg-putih lg:hidden z-20 bg-hitam-0" x-show="open"
-            x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90"
-            x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300"
-            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
-            <ul class="flex justify-between text-biru">
-                <li>
-                    <a href="#home-section" class="flex justify-center flex-col items-center gap-1">
-                        <i class="fa-solid fa-house text-2xl text-hitam-ungu"></i>
-                        <span class="font-semibold text-hitam-ungu">Beranda</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#tentangkami-section" class="flex justify-center flex-col items-center gap-1">
-                        <i class="fa-solid fa-users text-2xl text-hitam-ungu"></i>
-                        <span class="font-semibold text-hitam-ungu">Tentang</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#layanan-section" class="flex justify-center flex-col items-center gap-1">
-                        <i class="fa-solid fa-heart-circle-exclamation text-2xl text-hitam-ungu"></i>
-                        <span class="font-semibold text-hitam-ungu">Layanan</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#footer" class="flex justify-center flex-col items-center gap-1">
-                        <i class="fa-solid fa-paper-plane text-2xl text-hitam-ungu"></i>
-                        <span class="font-semibold text-hitam-ungu">Kontak</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <!-- quest 3 -->
 
+    <div class="custom-div next-options hidden">
+      <h2 class="text-2xl font-bold mb-3 text-justify text-hitam-ungu">
+        Hai! Kami ingin lebih mengenal Anda.
+      </h2>
+      <p class="mb-5 text-hitam">
+        Mohon mengisi informasi Umur pada profil Anda.
+      </p>
+      <div class="flex justify-center gap-8">
+        <button
+          onclick="redirectTo('option-done')"
+          class="btn-1 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          15-25 Tahun
+        </button>
+        <button
+          onclick="redirectTo('option-done')"
+          class="btn-2 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          25-45 Tahun
+        </button>
+      </div>
+    </div>
 
-    <!-- section home -->
-    <section id="home-section" class=" pb-[60px]">
-        <div class="container mx-auto">
-            <div class="grid grid-cols-12 items-center">
-                <div class="col-span-12 lg:col-span-8 order-2 lg:order-1 px-8 sm:px-20 lg:px-20">
-                    <div>
-                        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-plus-jakarta-sans font-bold text-hitam text-center pt-10 sm:pt-10 lg:pt-0">
-                            Temukan <span class="text-pink">Keharmonisan</span> dan Mulailah Cerita Baru
-                        </h1>
-                        <p class="pt-6 sm:pt-8 lg:pt-10 text-justify sm:text-center lg:text-center font-popins-thin lg:text-xl">
-                            Jelajahi dunia kencan yang luas, temukan kecocokan yang sempurna untuk anda, mulai koneksi
-                            yang berarti melalui obrolan pribadi, dan temukan pasangan yang menggetarkan hati di antara
-                            berbagai kesempatan yang menarik.
-                        </p>
-                        <div class="flex justify-between items-center flex-col sm:flex-row lg:flex-row pt-5 sm:pt-8 lg:pt-10">
-                            <a href="pages/login.html" class="w-full sm:w-auto lg:w-auto">
-                              <button class="w-full lg:w-auto px-6 py-4 mb-4 lg:mb-0 sm:px-8 lg:px-8 rounded-full bg-orange font-light text-putih text-[16px] text-center">
-                                Mulai Sekarang
-                              </button>
-                            </a>
-                            <div class="w-full sm:w-auto lg:w-auto flex flex-row items-center justify-center lg:justify-start gap-1 bg-opacity-0 border border-hitam py-3 sm:px-5 lg:px-6 rounded-full cursor-pointer">
-                              <ion-icon name="play-circle-outline" class="text-3xl text-orange"></ion-icon>
-                              <p class="text-[16px] text-hitam font-light">Cara Kerjanya?</p>
-                            </div>
-                          </div>                          
-                    </div>
-                </div>
-                <div class="col-span-12 lg:col-span-4 lg:order-2">
-                  <img src="public/image/image-frame-section-home.svg" class="w-full order-2" alt="" />
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- tentang kami section -->
-    <section id="tentangkami-section" class="pt-14 lg:pt-[120px] mb-14">
-        <div class="px-8 sm:px-20 lg:px-20">
-            <div class="flex flex-row items-center">
-                <div class="">
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-plus-jakarta-sans font-bold text-center lg:text-start"  data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">Apa itu TryLovve</h1>
-                    <p class="text-xl lg:text-2xl font-popins-thin text-center lg:text-justify mt-5"  data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
-                        TryLovve adalah platform online yang memungkinkan Anda untuk menemukan pasangan hidup. Di sini, Anda dapat memulai obrolan, 
-                        melakukan panggilan video, dan mengatur janji kencan dengan seseorang yang Anda kagumi.
-                    </p>
-                    <p class="text-xl lg:text-2xl font-popins-thin mt-7 text-center lg:text-justify"  data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">Untuk mendapatkan update dari kami. Jangan lupa follow kami dan bagikan ke teman teman dekat Anda</p>
-                    <div class="flex gap-5 mt-4 justify-center lg:justify-normal"  data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
-                        <ion-icon name="logo-instagram" class="text-3xl lg:text-4xl"></ion-icon>
-                        <ion-icon name="logo-facebook" class="text-3xl lg:text-4xl"></ion-icon>
-                        <ion-icon name="logo-tiktok" class="text-3xl lg:text-4xl"></ion-icon>
-                        <ion-icon name="logo-twitter" class="text-3xl lg:text-4xl"></ion-icon>
-                        <ion-icon name="share-social-outline" class="text-3xl lg:text-4xl"></ion-icon>
-                    </div>
-                </div>
-                <img src="public/image/—Pngtree—couple elements sitting with balloons_4082462.png" alt="" class="w-[480px] ml-[100px] hidden lg:block" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
-            </div>
-        </div>
-    </section>
-
-
-    <!-- section layanan -->
-    <section id="layanan-section" class="pt-14 lg:pt-[120px] mb-14">
-        <div class="px-8 sm:px-16 lg:px-20">
-            <h1 class="text-3xl sm:text-4xl lg:text-4xl text-center lg:text-start text-hitam" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
-                Layanan
-            </h1>
-            <div class="flex flex-col sm:flex-row lg:flex-none mt-8 lg:mt-16 mx-5">
-                <!-- for destop -->
-                <div class="hidden lg:block">
-                    <div class="flex flex-row">
-                        <div class="sm:mr-10 lg:mr-8 mb-6 lg:mb-0 bg-opacity-0 border-2 border-hitam text-ungu px-4 py-5 rounded-2xl text-center sm:text-start lg:text-start" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
-                            <i class="fa-solid fa-venus-mars text-5xl text-ungu"></i>
-                            <h1 class="text-2xl mt-2 text-ungu">Kecocokan</h1>
-                            <p class="text-[16px] mt-3 mb-5 lg:text-justify text-ungu">
-                                Koneksi langsung melalui obrolan, kencan, dan panggilan video
-                            </p>
-                            <a href="pages/option.html">
-                                <p class="font-semibold text-ungu">Selengkapnya &gt;</p>
-                            </a>
-                        </div>
-                        <div class="sm:mr-10 lg:mr-8 mb-6 lg:mb-0 bg-opacity-0 border-2 border-hitam text-ungu px-4 py-5 rounded-2xl text-center sm:text-start lg:text-start" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
-                            <i class="fa-solid fa-comments text-5xl text-ungu"></i>
-                            <h1 class="text-2xl mt-2 text-ungu">Interaksi</h1>
-                            <p class="text-[16px] mt-3 mb-5 lg:text-justify text-ungu">
-                                Koneksi langsung melalui obrolan, kencan, dan panggilan video
-                            </p>
-                            <a href="pages/option.html">
-                                <p class="font-semibold text-ungu">Selengkapnya &gt;</p>
-                            </a>
-                        </div>
-                        <div class="sm:mr-10 lg:mr-8 mb-6 lg:mb-0 bg-opacity-0 border-2 border-hitam text-ungu px-4 py-5 rounded-2xl text-center sm:text-start lg:text-start" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
-                            <i class="fa-solid fa-gamepad text-5xl text-ungu"></i>
-                            <h1 class="text-2xl mt-2 text-ungu">Game</h1>
-                            <p class="text-[16px] mt-3 mb-5 lg:text-justify text-ungu">
-                                Koneksi langsung melalui obrolan, kencan, dan panggilan video
-                            </p>
-                            <a href="">
-                                <p class="font-semibold text-ungu">Selengkapnya &gt;</p>
-                            </a>
-                        </div>
-                        <div class="sm:mr-10 lg:mr-8 mb-6 lg:mb-0 bg-opacity-0 border-2 border-hitam text-ungu px-4 py-5 rounded-2xl text-center sm:text-start lg:text-start" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
-                            <i class="fa-brands fa-teamspeak text-5xl text-ungu"></i>
-                            <h1 class="text-2xl mt-2 text-ungu">Konseling</h1>
-                            <p class="text-[16px] mt-3 mb-5 lg:text-justify text-ungu">
-                                Koneksi langsung melalui obrolan, kencan, dan panggilan video
-                            </p>
-                            <a href="">
-                                <p class="font-semibold text-ungu">Selengkapnya &gt;</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- for tablet -->
-                <div class="sm:block lg:hidden">
-                    <div class="sm:mr-10 lg:mr-8 mb-6 lg:mb-0 bg-opacity-0 border-2 border-hitam text-ungu px-4 py-5 rounded-2xl text-center sm:text-start lg:text-start" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
-                        <i class="fa-solid fa-venus-mars text-3xl text-ungu"></i>
-                        <h1 class="text-2xl mt-2 text-ungu">Kecocokan</h1>
-                        <p class="text-base mt-3 mb-5 sm:text-justify text-ungu">
-                            Koneksi langsung melalui obrolan, kencan, dan panggilan video
-                        </p>
-                        <a href="pages/option.html">
-                            <p class="font-semibold text-ungu text-base">Selengkapnya &gt;</p>
-                        </a>
-                    </div>
-                    <div class="sm:mr-10 lg:mr-8 mb-6 lg:mb-0 bg-opacity-0 border-2 border-hitam text-ungu px-4 py-5 rounded-2xl text-center sm:text-start lg:text-start" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
-                        <i class="fa-solid fa-comments text-3xl text-ungu"></i>
-                        <h1 class="text-2xl mt-2 text-ungu">Interaksi</h1>
-                        <p class="text-base mt-3 mb-5 sm:text-justify text-ungu">
-                            Koneksi langsung melalui obrolan, kencan, dan panggilan video
-                        </p>
-                        <a href="pages/option.html">
-                            <p class="font-semibold text-ungu text-base">Selengkapnya &gt;</p>
-                        </a>
-                    </div>
-                </div>
-                <div class=" sm:block lg:hidden">
-                    <div class="sm:mr-10 lg:mr-8 mb-6 lg:mb-0 bg-opacity-0 border-2 border-hitam text-ungu px-4 py-5 rounded-2xl text-center sm:text-start lg:text-start" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
-                        <i class="fa-solid fa-gamepad text-3xl text-ungu"></i>
-                        <h1 class="text-2xl mt-2 text-ungu">Game</h1>
-                        <p class="text-base mt-3 mb-5 sm:text-justify text-ungu">
-                            Koneksi langsung melalui obrolan, kencan, dan panggilan video
-                        </p>
-                        <a href="">
-                            <p class="font-semibold text-ungu text-base">Selengkapnya &gt;</p>
-                        </a>
-                    </div>
-                    <div class="sm:mr-10 lg:mr-8 mb-6 lg:mb-0 bg-opacity-0 border-2 border-hitam text-ungu px-4 py-5 rounded-2xl text-center sm:text-start lg:text-start" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
-                        <i class="fa-brands fa-teamspeak text-3xl text-ungu"></i>
-                        <h1 class="text-2xl mt-2 text-ungu">Konseling</h1>
-                        <p class="text-base mt-3 mb-5 sm:text-justify text-ungu">
-                            Koneksi langsung melalui obrolan, kencan, dan panggilan video
-                        </p>
-                        <a href="">
-                            <p class="font-semibold text-ungu text-base">Selengkapnya &gt;</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ulasan section -->
-    <section class="pt-14 lg:pt-[120px] mb-14">
-        <div class="px-8 sm:px-16 lg:px-20">
-            <h1 class="text-3xl sm:text-4xl lg:text-4xl text-center lg:text-start text-hitam" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
-                Pengalaman Pengguna
-            </h1>
-            <div class="mt-8 lg:pt-16 px-8 flex flex-col sm:flex-row lg:flex-row sm:gap-20 lg:gap-48">
-                <div class="px-4 py-4 mb-6 sm:mb-0 lg:mr-20 lg:mb-0 cursor-pointer rounded-lg bg-putih-abu  shadow-custom-two hover:bg-ungu hover:text-putih-abu" data-aos="fade-up-left" data-aos-easing="linear" data-aos-duration="1000">
-                    <i class="fa-solid fa-quote-left text-3xl lg:text-4xl"></i>
-                    <p class="mt-5 text-base font-popins-thin text-justify">
-                        Saat saya berkonsultasi, pelayanannya sangat ramah dan dokternyapun sangat berpengalaman
-                    </p>
-                    <p class="mt-3 text-base">&ndash; Gibson</p>
-                </div>
-                <div class="px-4 py-4 lg:mr-20 cursor-pointer rounded-lg bg-putih-abu shadow-custom-two hover:bg-ungu hover:text-putih-abu" data-aos="fade-up-right" data-aos-easing="linear" data-aos-duration="1000">
-                    <i class="fa-solid fa-quote-left text-3xl lg:text-4xl"></i>
-                    <p class="mt-5 text-base font-popins-thin text-justify"
-                    >Saat saya berkonsultasi, pelayanannya sangat ramah dan dokternyapun sangat berpengalaman
-                </p>
-                    <p class="mt-3 text-base">&ndash; Gibson</p>
-                </div>
-            </div>
-            <div class="pt-6 lg:pt-16 px-8 flex flex-col sm:flex-row lg:flex-row sm:gap-20 lg:gap-48" data-aos="fade-up-left" data-aos-easing="linear" data-aos-duration="1000">
-                <div class="px-4 py-4 mb-6 sm:mb-0 lg:mr-20 lg:mb-0 cursor-pointer rounded-lg bg-putih-abu shadow-custom-two hover:bg-ungu hover:text-putih-abu">
-                    <i class="fa-solid fa-quote-left text-3xl lg:text-4xl"></i>
-                    <p class="mt-5 text-base font-popins-thin text-justify">
-                        Saat saya berkonsultasi, pelayanannya sangat ramah dan dokternyapun sangat berpengalaman
-                    </p>
-                    <p class="mt-3 text-base">&ndash; Gibson</p>
-                </div>
-                <div class="px-4 py-4 lg:mr-20 cursor-pointer rounded-lg bg-putih-abu shadow-custom-two hover:bg-ungu hover:text-putih-abu" data-aos="fade-up-right" data-aos-easing="linear" data-aos-duration="1000">
-                    <i class="fa-solid fa-quote-left text-3xl lg:text-4xl"></i>
-                    <p class="mt-5 text-base font-popins-thin text-justify">Saat saya berkonsultasi, pelayanannya sangat ramah dan dokternyapun sangat berpengalaman</p>
-                    <p class="mt-3 text-base">&ndash; Gibson</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    
-    <!-- kontak section -->
-    <footer id="footer" class="pt-14 lg:pt-[120px]">
-        <div class="px-8 sm:px-16 lg:px-2 py-4 pb-8 bg-hitam text-putih-filter bottom-0">
-            <div class="flex flex-col sm:flex-row lg:flex-row justify-between px-16 items-center pt-8">
-                <div class="">
-                    <h1 class="text-2xl text-center sm:text-start lg:text-start">Berlangganan Trylovve Kami</h1>
-                    <p class="text-base mt-2 font-popins-thin text-center sm:text-start lg:text-start">Ikuti terus berita dan artikel kami</p>
-                </div>
-                <div class="mt-2 sm:mt-0 lg:mt-0 flex flex-col lg:flex-row">
-                    <input type="text" name="" id="" placeholder="Email Anda" class="px-2 w-full mr-3 mb-3 lg:mb-0 bg-hitam text-putih-abu border border-putih py-2 rounded-md">
-                    <button type="submit" class="bg-putih-abu py-2 px-4 text-hitam rounded-lg">Masuk</button>
-                </div>
-            </div>
-            <!-- for destop -->
-            <div class="hidden lg:block">
-                <div class="lg:px-16 sm:px-16 pt-5 lg:pt-12 flex flex-col lg:flex-row justify-center items-center sm:justify-normal sm:items-start lg:justify-normal lg:items-start">
-                        <div class="mr-16 mt-6 lg:mt-0">
-                            <h1 class="text-5xl font-plus-jakarta-sans font-bold text-center sm:text-start lg:text-start">TryLovve</h1>
-                            <p class="text-base mt-4 font-popins-thin text-center sm:text-start lg:text-start">Memungkinkan Anda untuk menemukan <br> pasangan hidup.</p>
-                        </div>
-                    <div class="flex flex-row justify-between mt-6">
-                        <div class="mr-20">
-                            <h1 class="text-xl text-orange text-center sm:text-start lg:text-start">Product</h1>
-                            <ul class="mt-3">
-                                <li class="mb-1 font-popins-thin text-center sm:text-start lg:text-start">API</li>
-                                <li class="mb-1 font-popins-thin">Penetapan Harga</li>
-                                <li class="mb-1 font-popins-thin text-center sm:text-start lg:text-start">Dokumentasi</li>
-                                <li class="mb-1 font-popins-thin text-center sm:text-start lg:text-start">Catatan Rilis</li>
-                                <li class="mb-1 font-popins-thin text-center sm:text-start lg:text-start">Status</li>
-                            </ul>
-                        </div>
-                        <div class="mr-20">
-                            <h1 class="text-xl text-orange text-start">Service</h1>
-                            <ul class="mt-3">
-                                <li class="mb-1 font-popins-thin text-start">Obrolan </li>
-                                <li class="mb-1 font-popins-thin text-start">Rencana Kencan</li>
-                                <li class="mb-1 font-popins-thin text-start">Game</li>
-                                <li class="mb-1 font-popins-thin text-start">Konseling</li>
-                                <li class="mb-1 font-popins-thin text-start">Bantuan</li>
-                            </ul>
-                        </div>
-                        <div class="mr-20">
-                            <h1 class="text-xl text-orange text-start">Tautan</h1>
-                            <ul class="mt-3">
-                                <li class="mb-1 font-popins-thin text-start">Beranda</li>
-                                <li class="mb-1 font-popins-thin text-start">Tentang Kami</li>
-                                <li class="mb-1 font-popins-thin text-start">Layanan</li>
-                                <li class="mb-1 font-popins-thin text-start">Kontak</li>
-                                <li class="mb-1 font-popins-thin text-start">Kebijakan Privasi</li>
-                            </ul>
-                        </div>
-                        <div class="mr-0">
-                            <h1 class="text-xl text-orange text-start">Legal</h1>
-                            <ul class="mt-3">
-                                <li class="mb-1 font-popins-thin text-start">Ketentuan</li>
-                                <li class="mb-1 font-popins-thin text-start">Privasi</li>
-                                <li class="mb-1 font-popins-thin text-start">Cookies</li>
-                                <li class="mb-1 font-popins-thin text-start">Lisensi</li>
-                                <li class="mb-1 font-popins-thin text-start">Dukungan</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div> 
-            </div>
-            <!-- for tablet -->
-            <div class="hidden sm:block lg:hidden">
-                <div class="lg:px-16 sm:px-16 pt-5 lg:pt-12 flex flex-col lg:flex-row justify-center items-center sm:justify-normal sm:items-start lg:justify-normal lg:items-start">
-                    <div class="flex">
-                        <div class="mr-16 mt-6 lg:mt-0">
-                            <h1 class="text-5xl font-plus-jakarta-sans font-bold text-center sm:text-start lg:text-start">TryLovve</h1>
-                            <p class="text-base mt-4 font-popins-thin text-center sm:text-start lg:text-start">Memungkinkan Anda untuk menemukan <br> pasangan hidup.</p>
-                        </div>
-                        <div class="lg:mr-16 mt-5 lg:mt-0">
-                            <h1 class="text-xl text-orange text-center sm:text-start lg:text-start">Product</h1>
-                            <ul class="mt-3">
-                                <li class="mb-1 font-popins-thin text-center sm:text-start lg:text-start">API</li>
-                                <li class="mb-1 font-popins-thin">Penetapan Harga</li>
-                                <li class="mb-1 font-popins-thin text-center sm:text-start lg:text-start">Dokumentasi</li>
-                                <li class="mb-1 font-popins-thin text-center sm:text-start lg:text-start">Catatan Rilis</li>
-                                <li class="mb-1 font-popins-thin text-center sm:text-start lg:text-start">Status</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="flex flex-row justify-between mt-6">
-                        <div class="mr-20">
-                            <h1 class="text-xl text-orange text-start">Service</h1>
-                            <ul class="mt-3">
-                                <li class="mb-1 font-popins-thin text-start">Obrolan </li>
-                                <li class="mb-1 font-popins-thin text-start">Rencana Kencan</li>
-                                <li class="mb-1 font-popins-thin text-start">Game</li>
-                                <li class="mb-1 font-popins-thin text-start">Konseling</li>
-                                <li class="mb-1 font-popins-thin text-start">Bantuan</li>
-                            </ul>
-                        </div>
-                        <div class="mr-20">
-                            <h1 class="text-xl text-orange text-start">Tautan</h1>
-                            <ul class="mt-3">
-                                <li class="mb-1 font-popins-thin text-start">Beranda</li>
-                                <li class="mb-1 font-popins-thin text-start">Tentang Kami</li>
-                                <li class="mb-1 font-popins-thin text-start">Layanan</li>
-                                <li class="mb-1 font-popins-thin text-start">Kontak</li>
-                                <li class="mb-1 font-popins-thin text-start">Kebijakan Privasi</li>
-                            </ul>
-                        </div>
-                        <div class="mr-0">
-                            <h1 class="text-xl text-orange text-start">Legal</h1>
-                            <ul class="mt-3">
-                                <li class="mb-1 font-popins-thin text-start">Ketentuan</li>
-                                <li class="mb-1 font-popins-thin text-start">Privasi</li>
-                                <li class="mb-1 font-popins-thin text-start">Cookies</li>
-                                <li class="mb-1 font-popins-thin text-start">Lisensi</li>
-                                <li class="mb-1 font-popins-thin text-start">Dukungan</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div> 
-            </div>
-            <!-- for destop/mobile -->
-            <div class="sm:hidden lg:hidden lg:px-16 pt-5 lg:pt-12 flex flex-col lg:flex-row justify-center items-center lg:justify-normal lg:items-start">
-                <div class="lg:mr-24">
-                    <h1 class="text-5xl font-plus-jakarta-sans font-bold text-center lg:text-start">TryLovve</h1>
-                    <p class="text-base mt-4 font-popins-thin text-center lg:text-start">Memungkinkan Anda untuk menemukan <br> pasangan hidup.</p>
-                </div>
-                <div class="lg:mr-16 mt-5 lg:mt-0">
-                    <h1 class="text-xl text-orange text-center lg:text-start">Service</h1>
-                    <ul class="mt-3">
-                        <li class="mb-1 font-popins-thin text-center lg:text-start">Obrolan </li>
-                        <li class="mb-1 font-popins-thin text-center lg:text-start">Rencana Kencan</li>
-                        <li class="mb-1 font-popins-thin text-center lg:text-start">Game</li>
-                        <li class="mb-1 font-popins-thin text-center lg:text-start">Konseling</li>
-                        <li class="mb-1 font-popins-thin text-center lg:text-start">Bantuan</li>
-                    </ul>
-                </div>
-                <div class="lg:mr-16 mt-5 lg:mt-0">
-                    <h1 class="text-xl text-orange text-center lg:text-start">Tautan</h1>
-                    <ul class="mt-3">
-                        <li class="mb-1 font-popins-thin text-center lg:text-start">Beranda</li>
-                        <li class="mb-1 font-popins-thin text-center lg:text-start">Tentang Kami</li>
-                        <li class="mb-1 font-popins-thin text-center lg:text-start">Layanan</li>
-                        <li class="mb-1 font-popins-thin text-center lg:text-start">Kontak</li>
-                        <li class="mb-1 font-popins-thin text-center lg:text-start">Kebijakan Privasi</li>
-                    </ul>
-                </div>
-                <div class="lg:mr-0 mt-5">
-                    <h1 class="text-xl text-orange text-center lg:text-start">Legal</h1>
-                    <ul class="mt-3">
-                        <li class="mb-1 font-popins-thin text-center lg:text-start">Ketentuan</li>
-                        <li class="mb-1 font-popins-thin text-center lg:text-start">Privasi</li>
-                        <li class="mb-1 font-popins-thin text-center lg:text-start">Cookies</li>
-                        <li class="mb-1 font-popins-thin text-center lg:text-start">Lisensi</li>
-                        <li class="mb-1 font-popins-thin text-center lg:text-start">Dukungan</li>
-                    </ul>
-                </div>
-            </div> 
-            <div class="px-16 pt-16 flex flex-col lg:flex-row justify-between">
-                <div class="flex gap-3 items-center justify-center lg:justify-normal text-putih">
-                    <ion-icon name="logo-instagram" class="text-2xl lg:text-2xl"></ion-icon>
-                    <ion-icon name="logo-facebook" class="text-2xl lg:text-2xl"></ion-icon>
-                    <ion-icon name="logo-tiktok" class="text-2xl lg:text-2xl"></ion-icon>
-                    <ion-icon name="logo-twitter" class="text-2xl lg:text-2xl"></ion-icon>
-                </div>
-                <div>
-                    <p class="font-popins-thin text-center lg:text-start mt-3 lg:mt-0">&copy;Los Pollos Hermanos Ltd.2023, All rights reserved</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-    <script src="src/script.js"></script>
-    <script src="//unpkg.com/alpinejs" defer></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script src="https://kit.fontawesome.com/64503a7986.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init();
-    </script>
-</body>
+      function redirectTo(option) {
+        var firstOptions = document.querySelector(".first-options");
+        var secondOptions = document.querySelector(".second-options");
+        var nextOptions = document.querySelector(".next-options");
 
+        if (option === "option1" || option === "option2") {
+          if (secondOptions && secondOptions.style.display !== "block") {
+            if (firstOptions) {
+              firstOptions.style.display = "none";
+            }
+            if (secondOptions) {
+              secondOptions.style.display = "block";
+            }
+          } else if (nextOptions && nextOptions.style.display !== "block") {
+            if (secondOptions) {
+              secondOptions.style.display = "none";
+            }
+            if (nextOptions) {
+              nextOptions.style.display = "block";
+            }
+          }
+        } else if (option === "option-done") {
+          window.location.href = "soulmate.html";
+        }
+      }
+    </script>
+  </body>
 </html>
