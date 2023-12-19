@@ -98,7 +98,7 @@
 <body>
 
     <!-- navigasi -->
-    <nav id="navbar" class="fixed top-0 w-[100%] z-1000 order-1 sm:order-2 lg:order-1" x-data="{open: false}">
+    <nav id="navbar" class="fixed top-0 w-full z-1000 order-1 sm:order-2 lg:order-1" x-data="{open: false}">
         <div class="flex px-8 py-3 justify-between items-center">
             <img src="public/image/logo-hamburger.svg" alt="" class="cursor-pointer block sm:block lg:hidden order-2 sm:order-1" @click="open = !open">
             <img src="public/image/logo-navigasi.svg" alt="" class="order-1 sm:order-2">
@@ -118,7 +118,7 @@
         </div>
 
         <!-- navigasi mobile -->
-        <div class="fixed bottom-0 right-0 left-0 p-4 bg-putih lg:hidden z-20 bg-hitam-0" x-show="open"
+        <div class="fixed bottom-0 right-0 left-0 p-4 bg-putih lg:hidden z-20 bg-hitam-0 w-full" x-show="open"
             x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90"
             x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300"
             x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
