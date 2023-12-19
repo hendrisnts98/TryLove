@@ -14,14 +14,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }); //end
 
 // navbar scroll
-// document.addEventListener("DOMContentLoaded", function () {
-//   var navbar = document.getElementById("navbar");
-//   window.addEventListener("scroll", function () {
-//     if (window.scrollY > 0) {
-//       navbar.classList.add("bg-putih", "shadow-custom");
-//     } else {
-//       navbar.classList.remove("bg-putih", "shadow-custom");
-//     }
-//   });
-// });
+document.addEventListener("DOMContentLoaded", function () {
+  var navbar = document.getElementById("navbar");
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 0) {
+      navbar.classList.add("bg-putih", "shadow-custom");
+    } else {
+      navbar.classList.remove("bg-putih", "shadow-custom");
+    }
+  });
+});
   
