@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", function () {
     if (window.scrollY > 0) {
       navbar.classList.add("bg-putih", "shadow-custom");
+      navbar.style.width("100%")
     } else {
       navbar.classList.remove("bg-putih", "shadow-custom");
     }
